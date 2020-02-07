@@ -1,0 +1,13 @@
+.DS_Store
+#pipelineai/
+#kustomize/
+.cache/
+fsx-s3-sc.yaml
+*.bak
+trust.json
+installer.yaml
+ckpt_dir/
+dataset/
+.ipynb_checkpoints/
+__pycache__/
+notebooks/part-3-kubernetes/pipelineai/

@@ -1,5 +1,19 @@
-AWS is to KubeFlow as...
+## AWS Kubeflow Workshop 
 
+### Slides
+* [Part 1: Amazon SageMaker](static/tf-world-distributed-training-workshop.pdf)
+* [Part 2: Amazon EKS + Kubeflow](static/Machine_Learning_Using_EKS.pdf)
+
+### Workshop
+* [Website](https://aws.pipeline.ai)
+
+### Acknowledgements
+This workshop is based on these github repos: 
+* https://github.com/shashankprasanna/distributed-training-workshop/
+* https://github.com/aws-samples/eks-workshop/
+* https://github.com/PipelineAI/pipeline
+
+## AWS is to KubeFlow as...
 * Amazon EKS is to Kubernetes
 * Amazon Step Functions is to Kubeflow Pipelines
 * Deequ is to TFX Feature Analysis
@@ -15,6 +29,4 @@ AWS is to KubeFlow as...
 * SageMaker Script Mode is to Kubeflow Fairing
 * Amazon Cognito OAuthentication is to Kubeflow Dex (OIDC)
 * Amazon Cognito User/Identity Pools is to Kubeflow User Profiles
-* AWS IAM Roles is to Kubernetes RBAC
-
-(More content coming soon!)
+* AWS IAM is to Kubernetes RBAC
