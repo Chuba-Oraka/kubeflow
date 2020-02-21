@@ -17,7 +17,6 @@ source activate tensorflow_p36
 python generate_cifar10_tfrecords.py --data-dir dataset
 
 # Confirm that the dataset was downloaded successfully. Run:
-```
 sudo yum install tree -y
 
 tree dataset
