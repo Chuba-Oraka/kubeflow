@@ -1,9 +1,6 @@
 ## AWS Kubeflow Workshop 
 
-### Workshop
-* [Website](https://aws.pipeline.ai)
-
-## AWS is to KubeFlow as...
+## Comparison of AWS to Kubeflow
 * Amazon EKS is to Kubernetes
 * Amazon Step Functions is to Kubeflow Pipelines
 * Deequ is to TFX Feature Analysis
