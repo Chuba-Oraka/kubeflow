@@ -6,14 +6,12 @@ weights: 4
 
 ### Monitoring training progress using tensorboard
 
-The ***cifar10-sagemaker-distributed.ipynb*** notebook will automatically start a tensorboard server for you when your run the following cell. 
-
-Tensorboard is running locally on your SageMaker Notebook instance, but reading the events from the Amazon S3 bucket we used to save the events.
-
 From your terminal, run the following command to start Tensorboard
 ```bash
 S3_REGION=us-west-2 tensorboard --logdir s3://${S3_BUCKET}/tensorboard_logs/ # <== MAKE SURE YOU INCLUDE THE TRAILING `/`
 ```
+
+**Note**: While Tensorboard is running locally on your SageMaker Notebook instance, it is reading the training logs from Amazon S3.
 
 Navigate to **`https://workshop.notebook.us-west-2.sagemaker.aws/proxy/6006/`**
 
