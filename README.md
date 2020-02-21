@@ -3,12 +3,6 @@
 ### Workshop
 * [Website](https://aws.pipeline.ai)
 
-### Acknowledgements
-This workshop is based on these github repos: 
-* https://github.com/shashankprasanna/distributed-training-workshop/
-* https://github.com/aws-samples/eks-workshop/
-* https://github.com/PipelineAI/pipeline
-
 ## AWS is to KubeFlow as...
 * Amazon EKS is to Kubernetes
 * Amazon Step Functions is to Kubeflow Pipelines
