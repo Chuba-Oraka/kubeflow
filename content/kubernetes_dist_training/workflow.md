@@ -32,7 +32,7 @@ Lots of Notebooks...
 
 |Files/directories|Description|
 |-----|-----|
-|docker/Dockerfile | Use this build a custom container image for training on Amazon EKS|
+|docker/Dockerfile.cpu[.gpu] | Use this build a custom container image for training on Amazon EKS|
 |docker/code|Contains the training script and other training script dependencies|
 |specs|List of spec files required to configure Kubeflow|
 

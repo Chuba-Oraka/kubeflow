@@ -14,7 +14,6 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes-sigs/aws-fsx-csi-d
 export VPC_ID=$(aws ec2 describe-vpcs --filters "Name=tag:Name,Values=eksctl-${AWS_CLUSTER_NAME}-cluster/VPC" --query "Vpcs[0].VpcId" --output text)
 echo "export VPC_ID=${VPC_ID}" | tee -a ~/.bash_profile
 
-
 #### Get Subnet ID
 export SUBNET_ID=$(aws ec2 describe-subnets --filters "Name=vpc-id,Values=${VPC_ID}" --query "Subnets[0].SubnetId" --output text)
 echo "export SUBNET_ID=${SUBNET_ID}" | tee -a ~/.bash_profile
@@ -37,7 +36,6 @@ sed -i.bak -e "s@SECURITY_GROUP_ID@$SECURITY_GROUP_ID@" specs/fsx-s3-sc.yaml
 sed -i.bak -e "s@S3_BUCKET@$S3_BUCKET@" specs/fsx-s3-sc.yaml
 
 #### Setup IAM Policies to allow Worker Nodes to Access FSx and S3
-```
 export POLICY_ARN=$(aws iam create-policy --policy-name fsx-csi --policy-document file://./specs/fsx_lustre_policy.json --query "Policy.Arn" --output text)
 echo "export POLICY_ARN=${POLICY_ARN}" | tee -a ~/.bash_profile
 
