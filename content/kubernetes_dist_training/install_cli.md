@@ -41,7 +41,7 @@ sudo mv aws-iam-authenticator /usr/local/bin
 
 aws-iam-authenticator version
 
-#### Install jq, envsubst (from GNU gettext utilities) and bash-completion
+#### Install jq and envsubst (from GNU gettext utilities) 
 sudo yum -y install jq gettext
 
 #### Verify the binaries are in the path and executable
