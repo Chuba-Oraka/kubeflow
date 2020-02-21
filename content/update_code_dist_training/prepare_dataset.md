@@ -32,17 +32,16 @@ tree dataset
 #
 ```
 
-Enter a **lower-case**, globally unique bucket name.  Be sure to add a unique identifier, such as your name.
-```
-export S3_BUCKET=<your-globally-unique-bucket-name>
-
-```
 {{% notice warning %}}
 **Note:** Bucket names should be unique globally.  If a bucket with the same name already exists, add another unique identifier such as today's date or your last name.  **BUCKET NAMES SHOULD NOT CONTAIN CAPITAL LETTERS**.  And should only include hyphens (`-').
 {{% /notice %}}
 
-Create a new S3 bucket and upload the dataset to it. 
 ```
+# Enter a **lower-case**, globally unique bucket name.  
+# (Be sure to add unique identifiers such as your name.)
+export S3_BUCKET=<your-globally-unique-bucket-name>
+
+# Create a new S3 bucket and upload the dataset to it. 
 aws s3 mb s3://${S3_BUCKET}
 
 ```
@@ -52,6 +51,7 @@ aws s3 mb s3://${S3_BUCKET}
 {{% /notice %}}
 
 ```
+# Proceed only after successful bucket creation above.
 echo "export S3_BUCKET=${S3_BUCKET}" | tee -a ~/.bash_profile
 
 aws s3 sync dataset/ s3://${S3_BUCKET}/cifar10-dataset/
