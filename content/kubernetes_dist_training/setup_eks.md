@@ -49,18 +49,21 @@ Wait until the EKS cluster is succesfully deployed before you continue.
 export STACK_NAME=$(eksctl get nodegroup --cluster ${AWS_CLUSTER_NAME} -o json | jq -r '.[].StackName')
 
 echo "export STACK_NAME=${STACK_NAME}" | tee -a ~/.bash_profile
+
 ```
 
 ```bash
 export INSTANCE_ROLE_NAME=$(aws cloudformation describe-stacks --stack-name $STACK_NAME --output text --query "Stacks[0].Outputs[1].OutputValue" | sed -e 's/.*\///g')
 
 echo "export INSTANCE_ROLE_NAME=${INSTANCE_ROLE_NAME}" | tee -a ~/.bash_profile
+
 ```
 
 ```bash
 export INSTANCE_PROFILE_ARN=$(aws cloudformation describe-stacks --stack-name $STACK_NAME | jq -r '.Stacks[].Outputs[] | select(.OutputKey=="InstanceProfileARN") | .OutputValue')
 
 echo "export INSTANCE_PROFILE_ARN=${INSTANCE_PROFILE_ARN}" | tee -a ~/.bash_profile
+
 ```
 
 #### Allow Access from/to the Elastic Container Registry (ECR)
@@ -68,6 +71,7 @@ This allows our cluster worker nodes to load custom Docker images (ie. models) f
 
 ```bash
 aws iam attach-role-policy --role-name $INSTANCE_ROLE_NAME --policy-arn arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryFullAccess
+
 ```
 
 ### Associated IAM and OIDC

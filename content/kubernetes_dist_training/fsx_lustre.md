@@ -12,13 +12,14 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes-sigs/aws-fsx-csi-d
 
 ```
 
+#### Get VPC ID
 ```
 export VPC_ID=$(aws ec2 describe-vpcs --filters "Name=tag:Name,Values=eksctl-${AWS_CLUSTER_NAME}-cluster/VPC" --query "Vpcs[0].VpcId" --output text)
 echo "export VPC_ID=${VPC_ID}" | tee -a ~/.bash_profile
 
 ```
 
-#### Get subnet ID from the VPC ID console
+#### Get Subnet ID
 ```
 export SUBNET_ID=$(aws ec2 describe-subnets --filters "Name=vpc-id,Values=${VPC_ID}" --query "Subnets[0].SubnetId" --output text)
 echo "export SUBNET_ID=${SUBNET_ID}" | tee -a ~/.bash_profile
