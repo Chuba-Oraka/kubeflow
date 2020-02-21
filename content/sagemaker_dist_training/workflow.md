@@ -31,9 +31,9 @@ SageMaker is a fully-managed service, which means when you kick off a training j
 
 * SageMaker spins up request number of instances in a fully-managed SageMaker cluster
 * SageMaker pulls the latest (or specified version) of TensorFlow container images, instantiates it on the new instances and loads the content of the `code` directory into the container
-* SageMaker runs the training script on each instance. Since we're running distributed training SageMaker launches an `MPI` job with the right settings so that workers can communicate with each other.
+* SageMaker runs the training script on each instance. Since we're running distributed training, SageMaker runs `mpirun` to launch an `MPI` job with the right settings so that workers can communicate with each other
 * SageMaker copies the dataset over from Amazon S3 and makes it available inside the container for Training
 * SageMaker monitors the training and updates progress on the Amazon SageMaker console
 * SageMaker copies all the code and model artifacts to Amazon S3 after the training is finished
 
-In addition, SageMaker does a lot more to ensure that the jobs run optimally and you get the best perfomance out-of-the box. As a user you don't have to worry about managing machine learning infrastructure.
+In addition, SageMaker does a lot more to ensure that the jobs run optimally and you get the best perfomance out-of-the box.  As a user, you don't have to worry about managing machine learning infrastructure.

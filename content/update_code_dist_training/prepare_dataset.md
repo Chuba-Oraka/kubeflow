@@ -14,7 +14,6 @@ cd ~/SageMaker/kubeflow/notebooks/
 source activate tensorflow_p36
 
 # Download CIFAR10 dataset and convert it to TFRecords format
-```
 python generate_cifar10_tfrecords.py --data-dir dataset
 
 # Confirm that the dataset was downloaded successfully. Run:
@@ -24,16 +23,17 @@ sudo yum install tree -y
 tree dataset
 
 ### EXPECTED OUTPUT
-dataset
-├── eval
-│   └── eval.tfrecords
-├── train
-│   └── train.tfrecords
-└── validation
-    └── validation.tfrecords
+# dataset
+# ├── eval
+# │   └── eval.tfrecords
+# ├── train
+# │   └── train.tfrecords
+# └── validation
+#     └── validation.tfrecords
+#
 ```
 
-Enter a **lower-case**, unique bucket name
+Enter a **lower-case**, globally unique bucket name.  Be sure to add a unique identifier, such as your name.
 ```
 export S3_BUCKET=<your-globally-unique-bucket-name>
 
@@ -42,7 +42,7 @@ export S3_BUCKET=<your-globally-unique-bucket-name>
 **Note:** Bucket names should be unique globally.  If a bucket with the same name already exists, add another unique identifier such as today's date or your last name.  BUCKET NAMES SHOULD NOT CONTAIN CAPITAL LETTERS.  And should only include hyphens (`-').
 {{% /notice %}}
 
-Create a new S3 bucket and upload the dataset to it. Be sure to add a unique identifier, such as your name.
+Create a new S3 bucket and upload the dataset to it. 
 ```
 aws s3 mb s3://${S3_BUCKET}
 
