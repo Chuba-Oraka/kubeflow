@@ -14,6 +14,10 @@ part-2-sagemaker/
    └── code
        ├── cifar10-multi-gpu-horovod-sagemaker.py
        └── model_def.py
+├──mxnet
+├──pytorch
+├──tensorflow
+└──xgboost
 ```
 
 |Files/directories|Description|

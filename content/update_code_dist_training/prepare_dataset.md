@@ -5,33 +5,25 @@ weight: 2
 ---
 ### Download the CIFAR10 dataset and upload it to Amazon S3
 
-On a terminal window in Jupyter client, navigate to the notebook directory
+In your Jupyter terminal window, run the following commands:
 
 ```
 cd ~/SageMaker/kubeflow/notebooks/
 
-```
-
-Activate the TensorFlow conda environment
-```
+# Activate the TensorFlow conda environment
 source activate tensorflow_p36
 
-```
-
-Download CIFAR10 dataset and convert it to TFRecords format
+# Download CIFAR10 dataset and convert it to TFRecords format
 ```
 python generate_cifar10_tfrecords.py --data-dir dataset
 
-```
-Confirm that the dataset was downloaded successfully. Run:
+# Confirm that the dataset was downloaded successfully. Run:
 ```
 sudo yum install tree -y
 
 tree dataset
 
-```
-You should see the following output
-```
+### EXPECTED OUTPUT
 dataset
 ├── eval
 │   └── eval.tfrecords
@@ -41,6 +33,7 @@ dataset
     └── validation.tfrecords
 ```
 
+Enter a **lower-case**, unique bucket name
 ```
 export S3_BUCKET=<your-globally-unique-bucket-name>
 
@@ -55,14 +48,11 @@ aws s3 mb s3://${S3_BUCKET}
 
 ```
 
-```
-echo "export S3_BUCKET=${S3_BUCKET}" | tee -a ~/.bash_profile
-
-```
-
 **Proceed only after successful bucket creation above.**
 
 ```
+echo "export S3_BUCKET=${S3_BUCKET}" | tee -a ~/.bash_profile
+
 aws s3 sync dataset/ s3://${S3_BUCKET}/cifar10-dataset/
 
 ```
