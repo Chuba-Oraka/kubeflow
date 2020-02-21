@@ -19,8 +19,6 @@ You should see a list of kubernetes namespaces:
 ```
 kubectl get ns
 
-```
-```
 ### EXPECTED OUTPUT ###
 # NAME              STATUS   AGE
 # default           Active   12m
@@ -33,8 +31,6 @@ You should see total number of nodes in your cluster:
 ```
 kubectl get nodes
 
-```
-```
 ### EXPECTED OUTPUT ###
 # NAME                                            STATUS   ROLES    AGE    VERSION
 # ip-XXX-XXX-XXX-XXX.us-west-2.compute.internal   Ready    <none>   7m3s   v1.14.7-eks-1861c5
