@@ -4,7 +4,7 @@ date: 2019-10-28T02:47:30-07:00
 weight: 4
 ---
 
-## Exercise 1: Convert training script to use horovod
+## Convert training script to use the Horovod API
 
 <br>In this section you'll update the training script with Horovod API to prepare for distributed training.
 
