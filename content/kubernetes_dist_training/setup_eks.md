@@ -4,7 +4,7 @@ date: 2019-10-28T15:14:12-07:00
 weight: 3
 ---
 
-Navigate to ***aws-kubeflow-workshop > notebooks > part-3-kubernetes***
+Navigate to ***kubeflow > notebooks > part-3-kubernetes***
 
 Setup the `AWS_REGION`, `AWS_CLUSTER_NAME` environment variables
 ```bash

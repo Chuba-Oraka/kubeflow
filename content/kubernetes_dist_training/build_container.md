@@ -31,7 +31,7 @@ $(aws ecr get-login --no-include-email --region us-west-2 --registry-ids 7631043
 In our Dockerfile we start with an AWS Deep Learning TensorFlow container and copy our training code into the container.
 
 ```
-cd ~/SageMaker/aws-kubeflow-workshop/notebooks/part-3-kubernetes/docker/
+cd ~/SageMaker/kubeflow/notebooks/part-3-kubernetes/docker/
 
 cat Dockerfile.cpu
 

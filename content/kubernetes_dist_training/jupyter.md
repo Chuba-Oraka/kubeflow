@@ -43,13 +43,13 @@ This connects to the notebook and opens the notebook interface in a new browser 
 CLick on **New**, select **Terminal**
 
 ```
-git clone https://github.com/PipelineAI/aws-kubeflow-workshop
+git clone https://github.com/data-science-on-aws/kubeflow
 
 ```
 
 #### Run the notebooks
 
-Navigate to the `aws-kubeflow-workshop / notebooks / part-3-kubernetes` directory and start following the examples.
+Navigate to the `kubeflow / notebooks / part-3-kubernetes` directory and start following the examples.
 
 ![run-notebooks](/images/kubeflow/run-notebooks.png)
 

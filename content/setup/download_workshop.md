@@ -14,12 +14,12 @@ weight: 7
 ```
 cd ~/SageMaker
 
-git clone https://github.com/PipelineAI/aws-kubeflow-workshop.git
+git clone https://github.com/data-science-on-aws/kubeflow.git
 
 ```
 
 * Confirm that you're able to see the contents.
 ```
-ls aws-kubeflow-workshop/notebooks
+ls kubeflow/notebooks
 
 ```

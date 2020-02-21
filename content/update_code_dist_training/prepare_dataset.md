@@ -8,7 +8,7 @@ weight: 2
 On a terminal window in Jupyter client, navigate to the notebook directory
 
 ```
-cd ~/SageMaker/aws-kubeflow-workshop/notebooks/
+cd ~/SageMaker/kubeflow/notebooks/
 
 ```
 

@@ -38,7 +38,7 @@ echo "export KF_NAME=${KF_NAME}" | tee -a ~/.bash_profile
 ```
 
 ```bash
-cd ~/SageMaker/aws-kubeflow-workshop/notebooks/part-3-kubernetes
+cd ~/SageMaker/kubeflow/notebooks/part-3-kubernetes
 
 export KF_DIR=$PWD/${KF_NAME}
 

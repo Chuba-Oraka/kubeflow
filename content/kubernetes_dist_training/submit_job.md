@@ -5,7 +5,7 @@ weight: 10
 ---
 #### Confirm that you are in the right directory
 ```
-cd ~/SageMaker/aws-kubeflow-workshop/notebooks/part-3-kubernetes/
+cd ~/SageMaker/kubeflow/notebooks/part-3-kubernetes/
 ```
 
 

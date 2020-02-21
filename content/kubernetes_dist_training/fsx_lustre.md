@@ -42,7 +42,7 @@ aws ec2 authorize-security-group-ingress --group-id ${SECURITY_GROUP_ID} --proto
 
 Populate SUBNET_ID, SECURITY_GROUP_ID, S3_BUCKET
 ```
-cd ~/SageMaker/aws-kubeflow-workshop/notebooks/part-3-kubernetes/
+cd ~/SageMaker/kubeflow/notebooks/part-3-kubernetes/
 
 sed "s@SUBNET_ID@$SUBNET_ID@" specs/fsx-s3-sc.yaml.template > specs/fsx-s3-sc.yaml
 

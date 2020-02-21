@@ -5,7 +5,7 @@ weight: 1
 ---
 
 Navigate to
-***aws-kubeflow-workshop > notebooks > part-3-kubernetes***
+***kubeflow > notebooks > part-3-kubernetes***
 You should see the following files:
 
 ```bash

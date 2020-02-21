@@ -5,7 +5,7 @@ metadata:
 provisioner: fsx.csi.aws.com
 # Notes:
 #   S3 Bucket in ``s3ImportPath` and `s3ExportPath` must be same, otherwise the driver can not create FSx for lustre successfully.
-#   s3ImportPath can stand alone and a random path will be created automatically like s3://aws-kubeflow-workshop/FSxLustre20190308T012310Z
+#   s3ImportPath can stand alone and a random path will be created automatically like s3://<your-unique-s3-bucket>/FSxLustre20190308T012310Z
 #   s3ExportPath can not be given without specifying S3ImportPath.
 parameters:
   subnetId: SUBNET_ID 

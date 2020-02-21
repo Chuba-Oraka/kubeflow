@@ -308,5 +308,5 @@ spec:
   version: master
 status:
   reposCache:
-  - localPath: '"/Users/cfregly/aws-kubeflow-workshop/pipelineai/.cache/manifests/manifests-0.7-branch"'
+  - localPath: '"/Users/cfregly/kubeflow/pipelineai/.cache/manifests/manifests-0.7-branch"'
     name: manifests
