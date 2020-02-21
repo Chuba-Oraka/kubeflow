@@ -10,7 +10,7 @@ weight: 3
 **Stop:** Do this section in your SageMaker Jupyter Notebook. <br>
 {{% /notice %}}
 
-<br>In this section you'll get familiar with a TensorFlow training script.
+<br>In this section you'll get familiar with our TensorFlow/Keras training code.
 
 Open `cifar10-single-instance.ipynb` and run through the cells. The following notebook is located at: <br>
 ***kubeflow > notebooks > part-1-horovod***
