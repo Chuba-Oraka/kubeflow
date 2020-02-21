@@ -6,37 +6,21 @@ weight: 10
 #### Confirm that you are in the right directory
 ```
 cd ~/SageMaker/kubeflow/notebooks/part-3-kubernetes/
-```
-
 
 #### Update the MPIJob spec file with your Docker image
-
-```
 sed -i.bak -e "s@YOUR_DOCKER_IMAGE@${ECR_REPOSITORY_URI}:latest@" specs/eks_tf_training_job-cpu.yaml
-```
-{{% notice tip %}}
-For GPU jobs use this instead: `eks_tf_training_job-gpu.yaml`
-{{% /notice %}}
 
 #### Submit a job run:
-```
 kubectl create -n default -f specs/eks_tf_training_job-cpu.yaml
 
-```
-```
 ### EXPECTED OUTPUT ###
 # mpijob.kubeflow.org/eks-tf-distributed-training created 
-```
 
-Running `kubectl get pods` will should you the number of workers + 1 number of pods.
+# Running `kubectl get pods` will should you the number of workers + 1 number of pods.
+# _Note:  You may see some pods in the `Initializing` state.  This is OK.  Try again in a few seconds._
 
-_Note:  You may see some pods in the `Initializing` state.  This is OK.  Try again in a few seconds._
-
-```bash
 kubectl get pods -n default | grep eks-tf-distributed-training
 
-```
-```
 ### EXPECTED OUTPUT ###
 # ...
 # NAME                                         READY   STATUS    RESTARTS   AGE
@@ -64,6 +48,6 @@ kubectl logs -n default eks-tf-distributed-training-launcher-<POD_NAME_FROM_ABOV
 
 **Congratulations!**
 
-You just trained a distributed TensorFlow model using Horovod on Amazon EKS with the FSx for Lustre distributed file system backed by S3!  
+You just trained a Distributed TensorFlow Model using Horovod on Amazon EKS with the FSx for Lustre distributed file system backed by S3!  
 
 **High-five!!**

@@ -7,64 +7,41 @@ weight: 9
 #### Create a new Elastic Container Registry (ECR) repository
 ```
 aws ecr create-repository --repository-name workshop
-```
-
 
 #### Build and push a custom Docker container
-```
 export ECR_REPOSITORY_URI=$(aws ecr describe-repositories --repository-names workshop --query "repositories[].repositoryUri" --output text)
 echo "export ECR_REPOSITORY_URI=${ECR_REPOSITORY_URI}" | tee -a ~/.bash_profile
-```
 
-
-Log-in to the AWS Deep Learning registry.  We will extend the base Docker images in this repo.
-```
+# Log-in to the AWS Deep Learning registry.  We will extend the base Docker images in this repo.
 $(aws ecr get-login --no-include-email --region us-west-2 --registry-ids 763104351884)
 
-```
-```
 ### EXPECTED OUTPUT ###
 # ...
 # Login Succeeded
-```
 
-In our Dockerfile we start with an AWS Deep Learning TensorFlow container and copy our training code into the container.
+# In our Dockerfile we start with an AWS Deep Learning TensorFlow container and copy our training code into the container.
 
-```
 cd ~/SageMaker/kubeflow/notebooks/part-3-kubernetes/docker/
 
-cat Dockerfile.cpu
+# cat Dockerfile.cpu
 
-```
-```
 ### EXPECTED OUTPUT ###
 # FROM 763104351884.dkr.ecr.us-west-2.amazonaws.com/tensorflow-training:1.14.0-cpu-py36-ubuntu16.04
 # COPY code /opt/training/
 # WORKDIR /opt/training
-```
 
-Run `docker build` command
-```
+# Run `docker build` command
 docker build -t ${ECR_REPOSITORY_URI}:latest -f Dockerfile.cpu . # <== MAKE SURE YOU INCLUDE THE `.` AT THE END!
 
-```
-
-Log in to your docker registry
-```
+# Log in to your docker registry
 $(aws ecr get-login --no-include-email --region us-west-2)
 
-```
-```
 ### EXPECTED OUTPUT ###
 # ...
 # Login Succeeded
-```
 
-Push your image to ECR
-
-```
+# Push your image to ECR
 docker push ${ECR_REPOSITORY_URI}:latest
-
 ```
 
 {{% notice tip %}}
