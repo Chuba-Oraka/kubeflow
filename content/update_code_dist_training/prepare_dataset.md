@@ -16,24 +16,6 @@ source activate tensorflow_p36
 # Download CIFAR10 dataset and convert it to TFRecords format
 python generate_cifar10_tfrecords.py --data-dir dataset
 
-# Confirm that the dataset was downloaded successfully. Run:
-sudo yum install tree -y
-
-tree dataset
-
-### EXPECTED OUTPUT
-# dataset
-# ├── eval
-# │   └── eval.tfrecords
-# ├── train
-# │   └── train.tfrecords
-# └── validation
-#     └── validation.tfrecords
-#
-
-```
-
-```
 export S3_BUCKET=sagemaker-$(aws sts get-caller-identity | jq -r '.Account')-$(aws configure get region)
 echo "export S3_BUCKET=${S3_BUCKET}" | tee -a ~/.bash_profile
 
