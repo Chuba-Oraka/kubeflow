@@ -70,3 +70,5 @@ You can monitor creation by navigating to the AWS Console, searching `FSx`, and 
 ![](/images/eks/fsx-lustre.png)
 
 _Note:  The minimum size of an FSx Lustre file system is 1.2 Terabytes._
+
+Please continue to the next section while the FSX Lustre file system is spinning up.

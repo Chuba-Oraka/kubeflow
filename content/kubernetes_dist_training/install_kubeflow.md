@@ -74,7 +74,10 @@ kubectl config set-context --current --namespace=kubeflow
 
 #### Navigate to the Kubeflow Dashboard - THIS WILL TAKE A FEW MINUTES
 # Note:  DNS is eventually consistent and will take a few minutes to propagate.  Please be patient if you see a 404 in your browser.  It will take a few minutes!
+```
 
+Re-run the following until it returns a valid hostname.  This may take 5-10 minutes.
+```
 echo $(kubectl get ingress -n istio-system -o jsonpath='{.items[0].status.loadBalancer.ingress[0].hostname}')
 
 ### EXPECTED OUTPUT - THIS WILL TAKE A FEW MINUTES!! ###
