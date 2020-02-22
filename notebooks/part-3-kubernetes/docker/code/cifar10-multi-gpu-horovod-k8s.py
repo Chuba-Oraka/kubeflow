@@ -112,11 +112,10 @@ def main(args):
     validation_dir = args.validation
     eval_dir = args.eval
     
-    # Change 2
     hvd.init()
     size = hvd.size()
     
-    # Change 3 - pin GPU to be used to process local rank (one GPU per process)
+    # pin GPU to be used to process local rank (one GPU per process)
     config = tf.ConfigProto()
     config.gpu_options.allow_growth = True
     config.gpu_options.visible_device_list = str(hvd.local_rank())
@@ -128,10 +127,10 @@ def main(args):
     
     input_shape = (HEIGHT, WIDTH, DEPTH)
     
-    # Change 4 - update learning rate
-    # Change 5 - update training code
+    # update learning rate
+    # update training code
     
-    # Change 6 - update callbacks - sync initial state, checkpoint only on 1st worker
+    # update callbacks - sync initial state, checkpoint only on 1st worker
     callbacks = []
     callbacks.append(hvd.callbacks.BroadcastGlobalVariablesCallback(0))
     callbacks.append(hvd.callbacks.MetricAverageCallback())
