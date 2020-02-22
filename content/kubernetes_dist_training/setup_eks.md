@@ -14,6 +14,8 @@ echo "export AWS_REGION=${AWS_REGION}" | tee -a ~/.bash_profile
 export AWS_CLUSTER_NAME=pipelineai
 echo "export AWS_CLUSTER_NAME=${AWS_CLUSTER_NAME}" | tee -a ~/.bash_profile
 
+echo "Completed"
+
 ```
 
 ### Create the EKS cluster
@@ -71,4 +73,5 @@ eksctl utils associate-iam-oidc-provider --cluster ${AWS_CLUSTER_NAME} --approve
 aws eks describe-cluster --name ${AWS_CLUSTER_NAME} --region ${AWS_REGION} --query "cluster.identity.oidc.issuer" --output text
 
 echo "Completed"
+
 ```
