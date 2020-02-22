@@ -8,6 +8,8 @@ Amazon FSx for Lustre provides a high-performance file system optimized for fast
 
 #### Install the FSx CSI Driver
 ```
+source ~/.bash_profile
+
 kubectl apply -f https://raw.githubusercontent.com/kubernetes-sigs/aws-fsx-csi-driver/release-0.2.0/deploy/kubernetes/manifest.yaml 
 
 #### Get VPC ID

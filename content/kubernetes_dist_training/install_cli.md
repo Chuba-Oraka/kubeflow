@@ -6,6 +6,8 @@ weight: 2
 
 From the terminal, navigate to the following directory for part 3 of the workshop
 ```
+source ~/.bash_profile
+
 cd ~/SageMaker/kubeflow/notebooks/part-3-kubernetes/
 
 #### Install `eksctl`

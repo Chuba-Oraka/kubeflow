@@ -6,6 +6,8 @@ weight: 8
 
 ```bash
 
+source ~/.bash_profile
+
 #### Check environment variables are set with valid values
 echo $S3_BUCKET
 echo $AWS_CLUSTER_NAME
@@ -104,6 +106,8 @@ AWS credentials are required to save a model in S3. These credentials are stored
 
 Create an IAM user 's3user', attach S3 access policy and retrieve temporary credentials
 ```bash
+source ~/.bash_profile
+
 aws iam create-user --user-name s3user
 aws iam attach-user-policy --user-name s3user --policy-arn arn:aws:iam::aws:policy/AmazonS3FullAccess
 aws iam attach-user-policy --user-name s3user --policy-arn arn:aws:iam::aws:policy/AmazonSageMakerFullAccess
@@ -114,13 +118,10 @@ aws iam create-access-key --user-name s3user > /tmp/create_output.json
 #### Next, save the new user's credentials into environment variables:
 
 export AWS_ACCESS_KEY_ID_VALUE=$(jq -j .AccessKey.AccessKeyId /tmp/create_output.json | base64)
-
 echo "export AWS_ACCESS_KEY_ID_VALUE=${AWS_ACCESS_KEY_ID_VALUE}" | tee -a ~/.bash_profile
 
 export AWS_SECRET_ACCESS_KEY_VALUE=$(jq -j .AccessKey.SecretAccessKey /tmp/create_output.json | base64)
-
 echo "export AWS_SECRET_ACCESS_KEY_VALUE=${AWS_SECRET_ACCESS_KEY_VALUE}" | tee -a ~/.bash_profile
-
 
 #### Apply to EKS cluster.
 # Note:  If you accidentally used `anonymous` for the namespace, please substitute `--namespace anonymous` below instead of `--namespace eksworkshop`.
@@ -175,7 +176,6 @@ cat <<EoF > sagemaker-invoke.json
 EoF
 
 aws iam put-role-policy --role-name eksworkshop-sagemaker-kfp-role --policy-name sagemaker-invoke-for-worker --policy-document file://sagemaker-invoke.json
-
 aws iam put-role-policy --role-name ${INSTANCE_ROLE_NAME} --policy-name sagemaker-invoke-for-worker --policy-document file://sagemaker-invoke.json
 
 ```

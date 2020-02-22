@@ -10,6 +10,8 @@ Once the cluster is up and running, you should see a message that your cluster i
 Update kubeconfig file to point to our new cluster.
 
 ```bash
+source ~/.bash_profile
+
 aws eks --region ${AWS_REGION} update-kubeconfig --name ${AWS_CLUSTER_NAME} 
 ```
 

@@ -19,6 +19,8 @@ echo "export AWS_CLUSTER_NAME=${AWS_CLUSTER_NAME}" | tee -a ~/.bash_profile
 ### Create the EKS cluster
 Run the following:
 ```bash
+source ~/.bash_profile
+
 eksctl create cluster \
     --name ${AWS_CLUSTER_NAME} \
     --version 1.14 \
@@ -44,6 +46,9 @@ Creating a cluster may take about 15 mins.
 Wait until the EKS cluster is succesfully deployed before you continue.
 
 ```bash
+### Source the environment
+source ~/.bash_profile
+
 ### Create more environment variables
 export STACK_NAME=$(eksctl get nodegroup --cluster ${AWS_CLUSTER_NAME} -o json | jq -r '.[].StackName')
 echo "export STACK_NAME=${STACK_NAME}" | tee -a ~/.bash_profile
