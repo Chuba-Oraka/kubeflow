@@ -80,7 +80,9 @@ echo $(kubectl get ingress -n istio-system -o jsonpath='{.items[0].status.loadBa
 
 ```
 
-# Navigate to the link above ^^.  Please be patient.  DNS takes time to propagate.
+{{% notice warning %}}
+**Note:**  Navigate to the link above ^^.  But please be patient as DNS takes some time to update.
+{{% /notice %}}
 
 ![dashboard](/images/kubeflow/dashboard-welcome.png)
 
