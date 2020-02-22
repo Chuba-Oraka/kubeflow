@@ -16,7 +16,7 @@ source activate tensorflow_p36
 # Download CIFAR10 dataset and convert it to TFRecords format
 python generate_cifar10_tfrecords.py --data-dir dataset
 
-export S3_BUCKET=sagemaker-$(aws sts get-caller-identity | jq -r '.Account')-$(aws configure get region)
+export S3_BUCKET=sagemaker-$(aws configure get region)-$(aws sts get-caller-identity | jq -r '.Account')
 echo "export S3_BUCKET=${S3_BUCKET}" | tee -a ~/.bash_profile
 
 # Create a new S3 bucket and upload the dataset to it. 
