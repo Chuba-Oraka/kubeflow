@@ -9,15 +9,11 @@ You should see the following files:
 
 ```bash
 part-2-sagemaker/
-├──horovod
+└──horovod
    ├── cifar10-sagemaker-distributed.ipynb
    └── code
        ├── cifar10-multi-gpu-horovod-sagemaker.py
        └── model_def.py
-├──mxnet
-├──pytorch
-├──tensorflow
-└──xgboost
 ```
 
 |Files/directories|Description|
