@@ -27,9 +27,7 @@ weight: 4
 
 ![Fill notebook instance](/images/setup/setup_fill_notebook.png)
 
-* To create an IAM role, from the IAM role drop-down list, select `Create a new role`. In the Create an IAM role dialog box, select `Any S3 bucket`. After that select Select `Create role`. Amazon SageMaker creates the `AmazonSageMaker-ExecutionRole-xx` role.
-
-![iam](/images/setup/notebook_iam.png)
+* In the IAM role box, select the default `TeamRole`. 
 
 * Keep the default settings for the other options and click `Create notebook instance`. On the `Notebook instances` section you should see the status change from `Pending` -> `InService`
 * While the notebook instance spins up, continue to work on the next section, and we'll come back and launch the instance when it's ready.
