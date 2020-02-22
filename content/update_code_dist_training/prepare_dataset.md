@@ -24,6 +24,6 @@ aws s3 mb s3://${S3_BUCKET}
 
 aws s3 sync dataset/ s3://${S3_BUCKET}/cifar10-dataset/
 
-echo "Completed!"
+echo "Completed"
 
 ```
