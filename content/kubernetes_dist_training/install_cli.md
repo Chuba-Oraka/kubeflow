@@ -52,4 +52,5 @@ for command in kubectl jq envsubst
     which $command &>/dev/null && echo "$command in path" || echo "$command NOT FOUND"
   done
 
+echo "Completed!"
 ```

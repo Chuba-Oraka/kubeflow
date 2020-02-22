@@ -181,4 +181,5 @@ EoF
 aws iam put-role-policy --role-name eksworkshop-sagemaker-kfp-role --policy-name sagemaker-invoke-for-worker --policy-document file://sagemaker-invoke.json
 aws iam put-role-policy --role-name ${INSTANCE_ROLE_NAME} --policy-name sagemaker-invoke-for-worker --policy-document file://sagemaker-invoke.json
 
+echo "Completed!"
 ```

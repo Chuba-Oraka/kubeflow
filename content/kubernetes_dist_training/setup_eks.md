@@ -35,6 +35,8 @@ eksctl create cluster \
     --alb-ingress-access \
     --auto-kubeconfig
 
+echo "Completed!"
+
 ```
 
 You should see output that is something similar to this.
@@ -68,4 +70,5 @@ aws iam attach-role-policy --role-name $INSTANCE_ROLE_NAME --policy-arn arn:aws:
 eksctl utils associate-iam-oidc-provider --cluster ${AWS_CLUSTER_NAME} --approve
 aws eks describe-cluster --name ${AWS_CLUSTER_NAME} --region ${AWS_REGION} --query "cluster.identity.oidc.issuer" --output text
 
+echo "Completed!"
 ```
