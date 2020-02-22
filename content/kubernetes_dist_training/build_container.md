@@ -6,6 +6,8 @@ weight: 9
 
 #### Create a new Elastic Container Registry (ECR) repository
 ```
+source ~/.bash_profile
+
 aws ecr create-repository --repository-name workshop
 
 #### Build and push a custom Docker container

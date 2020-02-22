@@ -5,6 +5,8 @@ weight: 10
 ---
 #### Confirm that you are in the right directory
 ```
+source ~/.bash_profile
+
 cd ~/SageMaker/kubeflow/notebooks/part-3-kubernetes/
 
 #### Update the MPIJob spec file with your Docker image

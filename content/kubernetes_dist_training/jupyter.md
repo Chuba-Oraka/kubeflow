@@ -49,6 +49,10 @@ git clone https://github.com/data-science-on-aws/kubeflow
 
 #### Run the notebooks
 
+{{% notice warning %}}
+**Note:** Make sure you are in the Kubeflow Jupyter Notebook (not SageMaker Jupyter Notebook.)
+{{% /notice %}}
+
 Navigate to the `kubeflow / notebooks / part-3-kubernetes` directory and start following the examples.
 
 ![run-notebooks](/images/kubeflow/run-notebooks.png)
